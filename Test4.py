@@ -50,12 +50,12 @@ def climb_stairs(n):
 	count = 0
 	if n == 1:
 		return 1
-	elif n == 2:
+	if n == 2:
 		return 2
-	else:
-		climb_stairs(n - 1)
-		count += 1
-	return count
+	a, b = 1, 2
+	for i in range(3, n + 1):
+		a, b = b, a + b
+	return b
 n = 3
 print(climb_stairs(n))
 
